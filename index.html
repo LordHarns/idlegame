@@ -1,19 +1,8 @@
 <html>
 <head><title>First JSP</title></head>
 <body>
-  <%
-    double num = Math.random();
-    if (num > 0.95) {
-  %>
-      <h2>You'll have a luck day!</h2><p>(<%= num %>)</p>
-  <%
-    } else {
-  %>
-      <h2>Well, life goes on ... </h2><p>(<%= num %>)</p>
-  <%
-    }
-  %>
-  <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
+ <script src="http://www.java.com/js/deployJava.js"></script>
+  <script> var attributes = { code:'components.DynamicTreeApplet', width:300, height:300} ; var parameters = {jnlp_href: 'dynamictree-applet.jnlp'} ; deployJava.runApplet(attributes, parameters, '1.6'); </script>
 </body>
 </html>
 
