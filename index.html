@@ -1,53 +1,49 @@
+<!DOCTYPE html>
 <html>
-
-  <head>
-    <title>Javascript test</title>
-  </head>
-
-  <body>
-    <script>
-      var number = 0;
-      var numberIncreasePerClick = 1;
-      var upgradeOneCost = 10;
-
-    </script>
-
-    <button type="button" onclick="clickFunction()">more</button>
-    <p id="num">Number: 0</p>
-    <p id="click">Number increase per click: 1</p>
-
-    <button style="float: left" id="upgradeOne" type="button" onclick="upgradeOneFunction()">Upgrade one</button>
-    <div style="overflow: hidden; padding-right: .5em;">
-      <p id="upgradeOneCostText">
-        Cost: 10
-      </p>
-    </div>
-
-    <script>
-      function clickFunction() {
-        number += numberIncreasePerClick;
-        document.getElementById("num").innerHTML = "Number: " + number;
-        document.getElementById("click").innerHTML = "Number increase per click: " + numberIncreasePerClick;
-      }
-
-      function upgradeOneFunction() {
-        if (number >= upgradeOneCost) {
-          number -= upgradeOneCost;
-          numberIncreasePerClick++;
-          document.getElementById("num").innerHTML = "Number: " + number;
-          document.getElementById("click").innerHTML = "Number increase per click: " + numberIncreasePerClick;
-          upgradeOneCost = Math.round(upgradeOneCost *= 1.5);
-          document.getElementById("upgradeOneCostText").innerHTML = "Cost: " + upgradeOneCost;
-        } else {
-
-        }
-
-      }
-
-    </script>
+<head><title>Javascript test</title></head>
+<body>
+  <script >
+  var number =0;
+  var numberIncreasePerClick =1;
+  var upgradeOneCost =10;
 
 
-  </body>
+ </script>
 
+ <button id="morebutton" type="button" onmousedown="mousedown()"onmouseup="mouseUp()"onclick="clickFunction()">more</button>
+ <p id="num">Number: 0</p>
+ <p id="click">Number increase per click: 1</p>
+ <button id ="upgradeOne" type="button" onclick="upgradeOneFunction()">Upgrade one</button>
+ <p id="upgradeOneCostText">Cost: 10</p>
+
+ <script>
+  	function mousedown(){
+  		document.getElementById("morebutton").style.color = "gray";
+}
+	function mouseUp() {
+    	document.getElementById("morebutton").style.color = "black";
+}
+  function clickFunction() {
+  number+=numberIncreasePerClick;
+    document.getElementById("num").innerHTML = "Number: "+number;
+    document.getElementById("click").innerHTML = "Number increase per click: "+numberIncreasePerClick;
+    }
+    function upgradeOneFunction() {
+    if(number>=upgradeOneCost){
+    number-=upgradeOneCost;
+     numberIncreasePerClick++;
+    document.getElementById("num").innerHTML = "Number: "+number;
+    document.getElementById("click").innerHTML = "Number increase per click: "+numberIncreasePerClick;
+    upgradeOneCost=Math.round(upgradeOneCost*=1.5);
+     document.getElementById("upgradeOneCostText").innerHTML = "Cost: "+upgradeOneCost;
+    }else{
+
+    }
+
+    }
+
+ </script>
+
+
+</body>
 </html>
-
