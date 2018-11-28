@@ -16,8 +16,11 @@
     <button id="morebutton" type="button" onmousedown="mousedown()" onmouseup="mouseUp()" onclick="clickFunction()">more</button>
     <p id="num">Number: 0</p>
     <p id="click">Number increase per click: 1</p>
-    <button id="upgradeOne" type="button" onclick="upgradeOneFunction()">Upgrade one</button>
-    <p id="upgradeOneCostText">Cost: 10</p>
+    <button style="float: left;" id ="upgradeOne" type="button" onclick="upgradeOneFunction()">Upgrade one</button>
+    <div id="upgradeOneCostText"> Cost: 20</div>
+    <p class="upgadeInformation" style="text-indent: 5px; line-height: 0.01; font-size: 12px;"> Gives +1 numbers per click<p>
+
+
 
     <script>
       function mousedown() {
