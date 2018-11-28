@@ -3,18 +3,21 @@
 <head><title>Javascript test</title></head>
 <body>
   <script >
-  var i =0;
+  var number =0;
+  var numberIncreasePerClick =1;
   
  </script>
  
- <button type="button" onclick="myFunction()">Click Me!</button>
- <p id="demo">0</p>
+ <button type="button" onclick="myFunction()">more</button>
+ <p id="num"></p>
+ <p id="click"></p>
 
  <script>
   
   function myFunction() { 
-  i++;
-    document.getElementById("demo").innerHTML = i ;
+  number+=numberIncreasePerClick;
+    document.getElementById("num").innerHTML = "Number: "+number;
+    document.getElementById("click").innerHTML = "Number increase per click:"+numberIncreasePerClick;
     }
  </script>
  
