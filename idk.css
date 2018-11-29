@@ -1,0 +1,47 @@
+.buttons {
+  background-color: grey;
+  color: white;
+}
+
+.upgradeInfo {
+  text-indent: 5px;
+  line-height: 0.1;
+  font-size: 12px;
+}
+
+#borderdiv {
+  width: 243px;
+  height: 243px;
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  margin-left: 200px;
+  margin-top: -200px;
+}
+
+.grid {
+  width: 25px;
+  height: 25px;
+  float: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
