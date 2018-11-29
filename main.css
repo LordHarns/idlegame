@@ -1,9 +1,11 @@
-#morebutton{
-  color: blue;
-  
+.buttons {
+  background-color: grey;
+  color: white;
 }
-.upgradeInfo{
-  text-indent: 5px; 
-  line-height: 0.1; 
+
+.upgradeInfo {
+  text-indent: 5px;
+  line-height: 0.1;
   font-size: 12px;
 }
+
