@@ -31,15 +31,15 @@
         <p class="upgradeInfo"> Gives +1 numbers per second
           <p>
             <div id="borderdiv">
-              <div class="grid"id="0.1"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.2"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.3"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.4"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.5"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.6"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.7"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.8"onclick="colorFunction(event)"></div>
-              <div class="grid"id="0.9"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 1"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 2"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 3"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 4"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 5"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 6"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 7"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 8"onclick="colorFunction(event)"></div>
+              <div class="grid"id="1 9"onclick="colorFunction(event)"></div>
               <div class="grid"id="1.0"onclick="colorFunction(event)"></div>
               <div class="grid"></div>
               <div class="grid"></div>
@@ -160,10 +160,11 @@
                 
                 
                if (color.includes("blue")){
-               var numid = parseFloat(target.id);
-               numid-=.1;
-               var id=numid.toString();
-               if(document.getElementById(id).classList.contains('red')){
+                var res = target.id.split(" ", 2);
+               var f = res[1];
+               var g = res[0];
+               
+               var id=(g.toString().concat(" ")).concat((f-1).toString());
                document.getElementById(target.id).classList.remove('red');
                 document.getElementById(target.id).classList.remove('blue');
                 document.getElementById(target.id).classList.remove('green');
