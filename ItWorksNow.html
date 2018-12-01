@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Javascript test</title>
+    <link href="main.css" type="text/css" rel="stylesheet">
+  </head>
+
+  <body>
+    <script>
+      var number = 0; // base number you have
+      var numberIncreasePerClick = 1; //base increase per click
+      var upgradeOneCost = 20; //base upgrade one cost
+      var upgradeTwoCost = 200; //base upgrade two cost
+      var numberPerSecond = 0;
+      var redCost;
+      var blueCost;
+      var greenCost;
+      var yellowCost;
+      var color = "";
+
+    </script>
+
+    <button class="buttons" id="morebutton" type="button" onclick="clickFunction()">more</button>
+    <p id="num">Number: 0</p>
+    <p id="click">Number increase per click: 1</p>
+
+    <button class="buttons" style="float: left;" id="upgradeOne" type="button" onclick="upgradeOneFunction()">Upgrade one</button>
+    <div id="upgradeOneCostText"> Cost: 20</div>
+    <p class="upgradeInfo"> Gives +1 numbers per click
+      <p>
+
+        <button class="buttons" style="float: left;" id="upgradeTwo" type="button" onclick="upgradeTwoFunction()">Upgrade two</button>
+        <div id="upgradeTwoCostText"> Cost: 200</div>
+        <p class="upgradeInfo"> Gives +1 numbers per second
+          <p>
+            <div id="borderdiv">
+              <div class="grid" id="1 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 9" onclick="colorFunction(event)"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+              <div class="grid"></div>
+            </div>
+
+            <button class="buttons" id="upgradeOne" type="button" onclick="redFunction()">red</button>
+            <button class="buttons" id="upgradeOne" type="button" onclick="blueFunction()">blue</button>
+            <button class="buttons" id="upgradeOne" type="button" onclick="greenFunction()">green</button>
+            <button class="buttons" id="upgradeOne" type="button" onclick="yellowFunction()">yellow</button>
+
+
+
+
+            <script>
+              function clickFunction() { //function for when you click "more" button
+                number += numberIncreasePerClick; //adds the amount you gain every click to your number
+                document.getElementById("num").innerHTML = "Number: " + number; //updates the num text to your current number
+              }
+
+              function upgradeOneFunction() {
+                if (number >= upgradeOneCost) {
+                  number -= upgradeOneCost;
+                  numberIncreasePerClick++;
+                  document.getElementById("num").innerHTML = "Number: " + number;
+                  document.getElementById("click").innerHTML = "Number increase per click: " + numberIncreasePerClick;
+                  upgradeOneCost = Math.round(upgradeOneCost *= 1.5);
+                  document.getElementById("upgradeOneCostText").innerHTML = "Cost: " + upgradeOneCost;
+                } else {}
+              }
+
+              function upgradeTwoFunction() {
+                if (number >= upgradeTwoCost) {
+                  number -= upgradeTwoCost;
+                  numberPerSecond++;
+                  document.getElementById("num").innerHTML = "Number: " + number;
+                  upgradeTwoCost = Math.round(upgradeTwoCost *= 1.5);
+                  document.getElementById("upgradeTwoCostText").innerHTML = "Cost: " + upgradeTwoCost;
+                } else {}
+              }
+              window.setInterval(function() {
+                number += numberPerSecond;
+                document.getElementById("num").innerHTML = "Number: " + number;
+              }, 1000);
+
+            </script>
+            <script>
+              //color stuff
+              function colorFunction(e) {
+                var target = e.srcElement || e.target;
+
+
+                if (color.includes("blue")) {
+                  var res = target.id.split(" ", 2);
+                  var f = res[1];
+                  var g = res[0];
+
+                  f++;
+                  if (f < 10) {
+                    var id1 = (g.toString().concat(" ")).concat((f).toString());
+                    f--;
+                  } else {
+                    id1 = "morebutton";
+                    f--;
+                  } //right
+                  f--;
+
+                  if (f > 0) {
+                    var idn1 = (g.toString().concat(" ")).concat((f).toString()); //left
+                    f++;
+                  } else {
+                    idn1 = "morebutton";
+                    f++;
+                  }
+
+                  if (document.getElementById(id1).classList.contains('red') || document.getElementById(idn1).classList.contains('red')) {
+                    if (document.getElementById(id1).classList.contains('blue')) {
+                      f += 2;
+                      if (f < 10) {
+                        var id2 = (g.toString().concat(" ")).concat((f).toString());
+                        f -= 2;
+                      } else {
+                        id2 = "morebutton";
+                        f -= 2;
+                      }
+                      if (document.getElementById(id2).classList.contains('red')) {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+
+                    } else if (document.getElementById(idn1).classList.contains('blue')) {
+                      f -= 2;
+                      if (f < 10) {
+                        var idn2 = (g.toString().concat(" ")).concat((f).toString());
+                        f += 2;
+                      } else {
+                        idn2 = "morebutton";
+                        f += 2;
+                      }
+                      if (document.getElementById(idn2).classList.contains('red')) {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    } else {
+                      document.getElementById(target.id).classList.remove('red');
+                      document.getElementById(target.id).classList.remove('blue');
+                      document.getElementById(target.id).classList.remove('green');
+                      document.getElementById(target.id).classList.remove('yellow');
+                      document.getElementById(target.id).classList.add(color);
+                    }
+                  } else {
+                    return;
+                  }
+
+                } else {
+                  
+                  document.getElementById(target.id).classList.remove('red');
+                  document.getElementById(target.id).classList.remove('blue');
+                  document.getElementById(target.id).classList.remove('green');
+                  document.getElementById(target.id).classList.remove('yellow');
+                  document.getElementById(target.id).classList.add(color);
+                }
+
+              }
+
+              function redFunction() {
+                color = "red";
+              }
+
+              function blueFunction() {
+                color = "blue";
+              }
+
+              function greenFunction() {
+                color = "green";
+              }
+
+              function yellowFunction() {
+                color = "yellow";
+              }
+
+            </script>
+
+
+  </body>
+
+</html>
+
