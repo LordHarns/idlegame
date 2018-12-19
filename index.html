@@ -7,66 +7,18 @@
   </head>
 
   <body>
-    <script>
-      var number = 0; // base number you have
-      var numberIncreasePerClick = 1; //base increase per click
-      var upgradeOneCost = 20; //base upgrade one cost
-      var upgradeTwoCost = 200; //base upgrade two cost
-      var numberPerSecond = 0;
-    
-    </script>
-
-    <button class="buttons" id="morebutton" type="button" onclick="clickFunction()">more</button>
-    <p id="num">Number: 0</p>
-    <p id="click">Number increase per click: 1</p>
-
-    <button class="buttons" style="float: left;" id="upgradeOne" type="button" onclick="upgradeOneFunction()">Upgrade one</button>
-    <div id="upgradeOneCostText"> Cost: 20</div>
-    <p class="upgradeInfo"> Gives +1 numbers per click
-      <p>
-
-        <button class="buttons" style="float: left;" id="upgradeTwo" type="button" onclick="upgradeTwoFunction()">Upgrade two</button>
-        <div id="upgradeTwoCostText"> Cost: 200</div>
-        <p class="upgradeInfo"> Gives +1 numbers per second
-          <p>
+    <div class="gamewindow">
+  <div class="currentweapon">
+   <img src="https://art.pixilart.com/cd4bde18a7082d0.png" width=100px height= 100px>
+   </div>
+    <div class="currentenemy">
+   <img 
+   </div>
 
 
 
-            <script>
-              function clickFunction() { //function for when you click "more" button
-                number += numberIncreasePerClick; //adds the amount you gain every click to your number
-                document.getElementById("num").innerHTML = "Number: " + number; //updates the num text to your current number
-              }
-
-              function upgradeOneFunction() {
-                if (number >= upgradeOneCost) {
-                  number -= upgradeOneCost;
-                  numberIncreasePerClick++;
-                  document.getElementById("num").innerHTML = "Number: " + number;
-                  document.getElementById("click").innerHTML = "Number increase per click: " + numberIncreasePerClick;
-                  upgradeOneCost = Math.round(upgradeOneCost *= 1.5);
-                  document.getElementById("upgradeOneCostText").innerHTML = "Cost: " + upgradeOneCost;
-                } else {}
-              }
-
-              function upgradeTwoFunction() {
-                if (number >= upgradeTwoCost) {
-                  number -= upgradeTwoCost;
-
-                  numberPerSecond++;
-
-
-                  document.getElementById("num").innerHTML = "Number: " + number;
-                  upgradeTwoCost = Math.round(upgradeTwoCost *= 1.5);
-                  document.getElementById("upgradeTwoCostText").innerHTML = "Cost: " + upgradeTwoCost;
-                } else {}
-
-              }
-              window.setInterval(function() {
-                number += numberPerSecond;
-                document.getElementById("num").innerHTML = "Number: " + number;
-              }, 1000);
-            </script>
+</div>
+  
 
 
   </body>
