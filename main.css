@@ -1,11 +1,31 @@
-.buttons {
-  background-color: grey;
-  color: white;
+.currentweapon{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  margin-left: 20px;
+  margin-top: 20px;
+ 
 }
 
-.upgradeInfo {
-  text-indent: 5px;
-  line-height: 0.1;
-  font-size: 12px;
+.currentenemy{
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  margin-left: 300px;
+  margin-top: 20px;
+ 
 }
-
+.gamewindow{
+   width: 1000px;
+  height: 700px;
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
