@@ -7,21 +7,545 @@
   </head>
 
   <body>
-    <div class="gamewindow">
-  <div class="currentweapon">
-   <img src="https://art.pixilart.com/cd4bde18a7082d0.png" width=100px height= 100px>
-   </div>
-    <div class="currentenemy">
-    
-   </div>
+    <script>
+      var number = 0; // base number you have
+      var numberIncreasePerClick = 1; //base increase per click
+      var upgradeOneCost = 20; //base upgrade one cost
+      var upgradeTwoCost = 200; //base upgrade two cost
+      var numberPerSecond = 0;
+      var redCost;
+      var blueCost;
+      var greenCost;
+      var yellowCost;
+      var color = "";
+
+    </script>
+
+    <button class="buttons" id="morebutton" type="button" onclick="clickFunction()">more</button>
+    <p id="num">Number: 0</p>
+    <p id="click">Number increase per click: 1</p>
+
+    <button class="buttons" style="float: left;" id="upgradeOne" type="button" onclick="upgradeOneFunction()">Upgrade one</button>
+    <div id="upgradeOneCostText"> Cost: 20</div>
+    <p class="upgradeInfo"> Gives +1 numbers per click
+      <p>
+
+        <button class="buttons" style="float: left;" id="upgradeTwo" type="button" onclick="upgradeTwoFunction()">Upgrade two</button>
+        <div id="upgradeTwoCostText"> Cost: 200</div>
+        <p class="upgradeInfo"> Gives +1 numbers per second
+          <p>
+            <div id="borderdiv">
+              <div class="grid" id="1 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="1 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="2 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="3 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="4 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="5 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="6 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="7 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="8 9" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 1" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 2" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 3" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 4" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 5" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 6" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 7" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 8" onclick="colorFunction(event)"></div>
+              <div class="grid" id="9 9" onclick="colorFunction(event)"></div>
+            </div>
+
+            <button class="buttons" id="upgradeOne" type="button" onclick="redFunction()">red</button>
+            <button class="buttons" id="upgradeOne" type="button" onclick="blueFunction()">blue</button>
+            <button class="buttons" id="upgradeOne" type="button" onclick="greenFunction()">green</button>
+            <button class="buttons" id="upgradeOne" type="button" onclick="yellowFunction()">yellow</button>
 
 
 
-</div>
-  
+
+            <script>
+              function clickFunction() { //function for when you click "more" button
+                number += numberIncreasePerClick; //adds the amount you gain every click to your number
+                document.getElementById("num").innerHTML = "Number: " + number; //updates the num text to your current number
+              }
+
+              function upgradeOneFunction() {
+                if (number >= upgradeOneCost) {
+                  number -= upgradeOneCost;
+                  numberIncreasePerClick++;
+                  document.getElementById("num").innerHTML = "Number: " + number;
+                  document.getElementById("click").innerHTML = "Number increase per click: " + numberIncreasePerClick;
+                  upgradeOneCost = Math.round(upgradeOneCost *= 1.5);
+                  document.getElementById("upgradeOneCostText").innerHTML = "Cost: " + upgradeOneCost;
+                } else {}
+              }
+
+              function upgradeTwoFunction() {
+                if (number >= upgradeTwoCost) {
+                  number -= upgradeTwoCost;
+                  numberPerSecond++;
+                  document.getElementById("num").innerHTML = "Number: " + number;
+                  upgradeTwoCost = Math.round(upgradeTwoCost *= 1.5);
+                  document.getElementById("upgradeTwoCostText").innerHTML = "Cost: " + upgradeTwoCost;
+                } else {}
+              }
+              window.setInterval(function() {
+                number += numberPerSecond;
+                document.getElementById("num").innerHTML = "Number: " + number;
+              }, 1000);
+
+            </script>
+            <script>
+              //color stuff
+              function colorFunction(e) {
+                var target = e.srcElement || e.target;
+
+
+                if (color.includes("blue")) {
+                  var res = target.id.split(" ", 2);
+                  var row = res[1];
+                  var col = res[0];
+
+                  row++;
+                  if (row < 10) {//right
+                    var idRight1 = (col.toString().concat(" ")).concat((row).toString());
+                    row--;
+                  } else {
+                    idRight1 = "morebutton";
+                    row--;
+                  } 
+                  
+                  row--;
+                  if (row > 0) {//left
+                    var idLeft1 = (col.toString().concat(" ")).concat((row).toString()); 
+                    row++;
+                  } else {
+                    idLeft1 = "morebutton";
+                    row++;
+                  }
+                  
+                   col++;
+                  if (col < 10) {//down
+                    var idDown1 = (col.toString().concat(" ")).concat((row).toString());
+                    col--;
+                  } else {
+                    idDown1 = "morebutton";
+                    col--;
+                  } 
+                  
+                  col--;
+                  if (col > 0) {//up
+                    var idUp1 = (col.toString().concat(" ")).concat((row).toString()); 
+                    col++;
+                  } else {
+                    idUp1 = "morebutton";
+                    col++;
+                  }
+
+                  if (document.getElementById(idRight1).classList.contains('red'))
+                  {
+                    if (document.getElementById(idDown1).classList.contains('blue')) 
+                    {
+                      col+= 2;
+                      if (col < 10) 
+                      {
+                        var idDown2 = (col.toString().concat(" ")).concat((row).toString());
+                        col-= 2;
+                      }
+                      else 
+                      {
+                        idDown2 = "morebutton";
+                        col-= 2;
+                      }
+                      col++;
+                      row++;
+                      if (col < 10&&row < 10) 
+                      {                       
+                        var idDown1Right1 = (col.toString().concat(" ")).concat((row).toString());
+                        col--;
+                        row--;
+                      }
+                      else 
+                      {
+                        idDown2 = "morebutton";
+                        col--;
+                        row--;
+                      }
+                       col++;
+                       row--;
+                      if (col < 10&&row > 0) 
+                      {                       
+                        var idDown1Left1 = (col.toString().concat(" ")).concat((row).toString());
+                        col--;
+                        row++;
+                      }
+                      else 
+                      {
+                        idDown2 = "morebutton";
+                        col --;
+                        row++;
+                      }
+                      
+                      if (document.getElementById(idDown2).classList.contains('red')||document.getElementById(idDown1Right1).classList.contains('red')||document.getElementById(idDown1Left1).classList.contains('red')) 
+                      {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                     }
+                    else if (document.getElementById(idUp1).classList.contains('blue')) 
+                    {
+                      col -= 2;
+                      if (col > 0) {
+                        var idUp2 = (col.toString().concat(" ")).concat((row).toString());
+                        col += 2;
+                      } else {
+                        idUp2 = "morebutton";
+                        col += 2;
+                      }
+                      if (document.getElementById(idUp2).classList.contains('red')) {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    }
+                    else if (document.getElementById(idLeft1).classList.contains('blue')) 
+                    {
+                      row -= 2;
+                      if (row < 10) {
+                        var idLeft2 = (col.toString().concat(" ")).concat((row).toString());
+                        row += 2;
+                      } else {
+                        idLeft2 = "morebutton";
+                        row += 2;
+                      }
+                      if (document.getElementById(idLeft2).classList.contains('red')) {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    }                     
+                    else 
+                    {
+                      document.getElementById(target.id).classList.remove('red');
+                      document.getElementById(target.id).classList.remove('blue');
+                      document.getElementById(target.id).classList.remove('green');
+                      document.getElementById(target.id).classList.remove('yellow');
+                      document.getElementById(target.id).classList.add(color);
+                    }
+                  }
+                  else if (document.getElementById(idLeft1).classList.contains('red'))
+                  {
+                    if (document.getElementById(idDown1).classList.contains('blue')) 
+                    {
+                      col += 2;
+                      if (col < 10) 
+                      {
+                        var idDown2 = (col.toString().concat(" ")).concat((row).toString());
+                        col -= 2;
+                      }else {
+                        idDown2 = "morebutton";
+                        col -= 2;
+                      }
+                      if (document.getElementById(idDown2).classList.contains('red')) 
+                      {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                     }
+                    else if (document.getElementById(idRight1).classList.contains('blue')) 
+                    {
+                      row += 2;
+                      if (row < 10) 
+                      {
+                        var idRight2 = (col.toString().concat(" ")).concat((row).toString());
+                        row -= 2;
+                      } else {
+                        idRight2 = "morebutton";
+                        row -= 2;
+                      }
+                      if (document.getElementById(idRight2).classList.contains('red')) 
+                      {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    } 
+                    else if (document.getElementById(idUp1).classList.contains('blue')) 
+                    {
+                      col -= 2;
+                      if (col > 0) {
+                        var idUp2 = (col.toString().concat(" ")).concat((row).toString());
+                        col += 2;
+                      } else {
+                        idUp2 = "morebutton";
+                        col += 2;
+                      }
+                      if (document.getElementById(idUp2).classList.contains('red')) 
+                      {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    }   
+                    else 
+                    {
+                      document.getElementById(target.id).classList.remove('red');
+                      document.getElementById(target.id).classList.remove('blue');
+                      document.getElementById(target.id).classList.remove('green');
+                      document.getElementById(target.id).classList.remove('yellow');
+                      document.getElementById(target.id).classList.add(color);
+                    }
+                  }
+                  else if (document.getElementById(idUp1).classList.contains('red'))
+                  {
+                    if (document.getElementById(idDown1).classList.contains('blue')) 
+                    {
+                      col += 2;
+                      if (col < 10) 
+                      {
+                        var idDown2 = (col.toString().concat(" ")).concat((row).toString());
+                        col -= 2;
+                      }
+                      else 
+                      {
+                        idDown2 = "morebutton";
+                        col -= 2;
+                      }
+                      if (document.getElementById(idDown2).classList.contains('red')) 
+                      {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                     }
+                    else if (document.getElementById(idRight1).classList.contains('blue')) 
+                    {
+                      row += 2;
+                      if (row < 10) {
+                        var idRight2 = (col.toString().concat(" ")).concat((row).toString());
+                        row -= 2;
+                      } else {
+                        idRight2 = "morebutton";
+                        row -= 2;
+                      }
+                      if (document.getElementById(idRight2).classList.contains('red')) 
+                      {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    } 
+                    else if (document.getElementById(idLeft1).classList.contains('blue')) 
+                    {
+                      row -= 2;
+                      if (row < 10) {
+                        var idLeft2 = (col.toString().concat(" ")).concat((row).toString());
+                        row += 2;
+                      } else {
+                        idLeft2 = "morebutton";
+                        row += 2;
+                      }
+                      if (document.getElementById(idLeft2).classList.contains('red')) {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    }   
+                    else 
+                    {
+                      document.getElementById(target.id).classList.remove('red');
+                      document.getElementById(target.id).classList.remove('blue');
+                      document.getElementById(target.id).classList.remove('green');
+                      document.getElementById(target.id).classList.remove('yellow');
+                      document.getElementById(target.id).classList.add(color);
+                    }
+                  }
+                  else if (document.getElementById(idDown1).classList.contains('red'))
+                  {
+                    if (document.getElementById(idUp1).classList.contains('blue')) 
+                    {
+                      col -= 2;
+                      if (col > 0) {
+                        var idUp2 = (col.toString().concat(" ")).concat((row).toString());
+                        col += 2;
+                      } else {
+                        idUp2 = "morebutton";
+                        col += 2;
+                      }
+                      if (document.getElementById(idUp2).classList.contains('red')) {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    }                                 
+                    else if (document.getElementById(idRight1).classList.contains('blue')) 
+                    {
+                      row += 2;
+                      if (row < 10) {
+                        var idRight2 = (col.toString().concat(" ")).concat((row).toString());
+                        row -= 2;
+                      } else {
+                        idRight2 = "morebutton";
+                        row -= 2;
+                      }
+                      if (document.getElementById(idRight2).classList.contains('red')) 
+                      {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                    } 
+                    else if (document.getElementById(idLeft1).classList.contains('blue')) 
+                    {
+                      row -= 2;
+                      if (row < 10) {
+                        var idLeft2 = (col.toString().concat(" ")).concat((row).toString());
+                        row += 2;
+                      } else {
+                        idLeft2 = "morebutton";
+                        row += 2;
+                      }
+                      if (document.getElementById(idLeft2).classList.contains('red')) {
+                        document.getElementById(target.id).classList.remove('red');
+                        document.getElementById(target.id).classList.remove('blue');
+                        document.getElementById(target.id).classList.remove('green');
+                        document.getElementById(target.id).classList.remove('yellow');
+                        document.getElementById(target.id).classList.add(color);
+                      }
+                  }                                   
+                    else 
+                    {
+                  document.getElementById(target.id).classList.remove('red');
+                  document.getElementById(target.id).classList.remove('blue');
+                  document.getElementById(target.id).classList.remove('green');
+                  document.getElementById(target.id).classList.remove('yellow');
+                  document.getElementById(target.id).classList.add(color);
+                }
+                  }
+                  else 
+                  {
+                    return;
+                  }
+                  
+               }
+                else 
+                {
+               document.getElementById(target.id).classList.remove('red');
+               document.getElementById(target.id).classList.remove('blue');
+               document.getElementById(target.id).classList.remove('green');
+               document.getElementById(target.id).classList.remove('yellow');
+               document.getElementById(target.id).classList.add(color);
+               }
+              }
+
+              function redFunction() {
+                color = "red";
+              }
+
+              function blueFunction() {
+                color = "blue";
+              }
+
+              function greenFunction() {
+                color = "green";
+              }
+
+              function yellowFunction() {
+                color = "yellow";
+              }
+
+            </script>
 
 
   </body>
 
 </html>
+
 
