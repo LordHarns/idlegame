@@ -1,31 +1,50 @@
-.currentweapon{
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
-  margin-left: 20px;
-  margin-top: 20px;
- 
+.buttons {
+  background-color: grey;
+  color: white;
 }
 
-.currentenemy{
-  width: 150px;
-  height: 200px;
+.upgradeInfo {
+  text-indent: 5px;
+  line-height: 0.1;
+  font-size: 12px;
+}
+
+#borderdiv {
+  width: 243px;
+  height: 243px;
   position: absolute;
   border-width: 1px;
   border-style: solid;
   border-color: black;
-  margin-left: 300px;
-  margin-top: 20px;
- 
+  margin-left: 200px;
+  margin-top: -200px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
 }
-.gamewindow{
-   width: 1000px;
-  height: 700px;
-  position: absolute;
+
+.grid {
+  width: 25px;
+  height: 25px;
+  float: left;
   border-width: 1px;
   border-style: solid;
   border-color: black;
 }
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+
